@@ -1,6 +1,8 @@
 # Class file for the Pyraminx class
 # Stores the configuration state of the Pyraminx
 
+import pUtils
+
 class Pyraminx:
   def __init__(self, red_face, green_face, blue_face, yellow_face):
     self.red_face = []
@@ -29,6 +31,16 @@ class Pyraminx:
     self.yellow_face.append([yellow_face[6], yellow_face[1], yellow_face[3]])
 
     print("Pyraminx state set.")
+
+  # Returns face according to faceId
+  def face(self, faceId):
+    switcher = {
+      1: self.red_face,
+      2: self.green_face,
+      3: self.blue_face,
+      4: self.yellow_face
+    }
+    return switcher[faceId]
 
   # Tip rotations
   def u(self):
@@ -166,7 +178,22 @@ class Pyraminx:
       self.LInv()
       return
 
+  # Method to replace a face of the pyraminx by a given face-matrix
+  def setFace(self, faceId, face):
+    if faceId == 1:
+      self.red_face = face
+    elif faceId == 2:
+      self.green_face = face
+    elif faceId == 3:
+      self.blue_face = face
+    else:
+      self.yellow_face = face
+
   # Apply an algorithm given as a list
   def applyAlgo(self, algo):
     for step in algo:
       self.move(step)
+
+  # Fix the face colors
+  def fixFaceColors(self):
+    self = pUtils.fixColors(self)

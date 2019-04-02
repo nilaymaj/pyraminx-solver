@@ -73,13 +73,13 @@ class CentreSolver:
       algo.append("R'")
 
     # Solve the left centre
-    print("FROM CSOLVER L-STEP: " + str(self.pyraminx.green_face[0][2]))
+    # print("FROM CSOLVER L-STEP: " + str(self.pyraminx.green_face[0][2]))
     diff = self.pyraminx.green_face[0][2] - 2
     if diff == 1:
       algo.append("L'")
     elif diff == 2:
       algo.append("L")
-    print("FROM CSOLVER L-STEP: " + str(diff))
+    # print("FROM CSOLVER L-STEP: " + str(diff))
     # Apply the algorithm to the pyraminx
     self.pyraminx.applyAlgo(algo)
     return algo

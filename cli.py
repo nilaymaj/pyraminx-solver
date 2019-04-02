@@ -29,6 +29,22 @@ def printState(pyraminx):
   print(pyraminx.blue_face)
   print(pyraminx.yellow_face)
 
+def toNumArray(string):
+  array = []
+  for char in string:
+    if char != '\n':
+      array.append(int(char))
+  return array
+
+def getFromFile(filename):
+  file = open(filename, "r")
+  faces = file.readlines()
+  for i in range(4):
+    faces[i] = toNumArray(faces[i])
+  pyraminx = Pyraminx(faces[0], faces[1], faces[2], faces[3])
+  file.close()
+  return pyraminx
+
 def printAlgo(algo):
   for step in algo:
     print(step, end=" ")
