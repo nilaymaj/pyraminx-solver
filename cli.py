@@ -1,5 +1,6 @@
 # Methods for taking command-line input and output
 
+import pUtils
 from Pyraminx import Pyraminx
 
 # TODO: Create README.md, must include the CLI input instructions.
@@ -23,7 +24,14 @@ def inputState():
   pyraminx = Pyraminx(matrix[0], matrix[1], matrix[2], matrix[3])
   return pyraminx
 
-def printState(pyraminx):
+def scramblePyraminx(filename):
+  file = open(filename, "r")
+  scramble = file.readline()
+  file.close()
+  scramble = scramble.split()
+  return pUtils.scramble(scramble)
+
+def printPyraminx(pyraminx):
   print(pyraminx.red_face)
   print(pyraminx.green_face)
   print(pyraminx.blue_face)
@@ -49,4 +57,8 @@ def printAlgo(algo):
   for step in algo:
     print(step, end=" ")
   print()
+
+def printEdgeMap(edgeMap):
+  print(edgeMap.map[0])
+  print(edgeMap.map[1])
 

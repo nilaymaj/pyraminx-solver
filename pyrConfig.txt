@@ -1,4 +1,13 @@
-441123434
-224313143
-132314123
-241242213
+143242231
+241342341
+332134232
+314121414
+# Scramble: u' f r l' U' F' U R' L' F' U L
+(from standard orientation)
+
+311321131
+112443324
+243334442
+322214214
+# Scramble: u f r l U F R L U' R F'
+(from standard orientation)
