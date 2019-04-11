@@ -27,7 +27,11 @@ def main():
   origPyraminx = copy.deepcopy(pyraminx)
 
   # Optimal Solver
-  # algo = OptimalSolver.solve(pyraminx)
+  # isValid = pUtils.checkIfValidConfig(pyraminx)
+  # if isValid:
+  #   algo = OptimalSolver.solve(pyraminx)
+  # else:
+  #   algo = []
 
   # Intuitive Solver
   try:
