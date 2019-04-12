@@ -1,8 +1,9 @@
 # Main entry point for the PyraminxSolver project
 
-import cli, copy, pUtils
-from PyraminxSolver import PyraminxSolver
-import OptimalSolver
+from src import cli, pUtils
+from src.PyraminxSolver import PyraminxSolver
+from src import OptimalSolver
+import copy
 
 def main():
   print("Welcome to the PyraminxSolver Project\n")
@@ -27,19 +28,19 @@ def main():
   origPyraminx = copy.deepcopy(pyraminx)
 
   # Optimal Solver
-  # isValid = pUtils.checkIfValidConfig(pyraminx)
-  # if isValid:
-  #   algo = OptimalSolver.solve(pyraminx)
-  # else:
-  #   algo = []
+  isValid = pUtils.checkIfValidConfig(pyraminx)
+  if isValid:
+    algo = OptimalSolver.solve(pyraminx)
+  else:
+    algo = []
 
   # Intuitive Solver
-  try:
-    solver = PyraminxSolver(pyraminx)
-    algo = solver.solve()
-    algo = pUtils.simplifyAlgo(algo)
-  except:
-    algo = []
+  # try:
+  #   solver = PyraminxSolver(pyraminx)
+  #   algo = solver.solve()
+  #   algo = pUtils.simplifyAlgo(algo)
+  # except:
+  #   algo = []
 
   isSolved = pUtils.checkSolution(origPyraminx, algo)
   if isSolved:
@@ -48,7 +49,6 @@ def main():
     print("Yeah, it works.")
   else:
     print("How DARE you give me an invalid configuration!")
-
 
 if __name__ == "__main__":
   main()

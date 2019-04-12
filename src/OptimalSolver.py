@@ -1,6 +1,6 @@
 # from Pyraminx import Pyraminx
-import pUtils, cli
-from CentreSolver import CentreSolver
+from src import pUtils, cli
+from src.CentreSolver import CentreSolver
 
 moves = ["U", "F", "R", "L"]
 
@@ -10,8 +10,9 @@ def dfsearch(pyraminx):
   layer = []
   solvedP = pUtils.solvedPyraminx()
   if pyraminx.eq(solvedP):
+    print("Already solved?")
     algorithms.append([])
-    return
+    return []
   layer.append((pyraminx, []))
   while True:
     newLayer = []
@@ -24,7 +25,6 @@ def dfsearch(pyraminx):
     if len(layer[0][1]) >= 14:
       print("No solution found. Sorry.")
       return []
-  print("HOW DID WE REACH THE END OF THIS FUNCTION??!")
 
 def generateNeighbors(pyraminx, scramble):
   neighbors = []

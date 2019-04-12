@@ -3,7 +3,7 @@
 # To be used only on a Pyraminx with centres and tips solved
 # import cli
 import copy
-import pUtils
+from src import pUtils
 
 class EdgeMap:
   def __init__(self, pyraminx):

@@ -1,9 +1,9 @@
 # Encapsulates the various solver classes for each step
 
-from CentreSolver import CentreSolver
-from LayerSolver import LayerSolver
-from TopSolver import TopSolver
-import pUtils
+from src.CentreSolver import CentreSolver
+from src.LayerSolver import LayerSolver
+from src.TopSolver import TopSolver
+from src import pUtils
 import copy
 
 class PyraminxSolver:

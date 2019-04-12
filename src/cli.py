@@ -1,7 +1,7 @@
 # Methods for taking command-line input and output
 
-import pUtils
-from Pyraminx import Pyraminx
+from src import pUtils
+from src.Pyraminx import Pyraminx
 
 # TODO: Create README.md, must include the CLI input instructions.
 def printInputInstructions():

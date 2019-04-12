@@ -1,5 +1,6 @@
-from Pyraminx import Pyraminx
+from src.Pyraminx import Pyraminx
 import random
+from src.PyraminxSolver import PyraminxSolver
 
 # SOLVED_PYRAMINX = Pyraminx([1,1,1,1,1,1,1,1,1], [2,2,2,2,2,2,2,2,2], [3,3,3,3,3,3,3,3,3], [4,4,4,4,4,4,4,4,4])
 
@@ -51,8 +52,9 @@ def isSolved(pyraminx):
   return 1
 
 def checkSolution(pyraminx, algo):
-  pyraminx.applyAlgo(algo)
-  return isSolved(pyraminx)
+  newP = pyraminx.copy()
+  newP.applyAlgo(algo)
+  return isSolved(newP)
 
 def rotateList(givenList, rotations):
   length = len(givenList)
@@ -168,3 +170,13 @@ def generateScramble(length):
 def solvedPyraminx():
   SOLVED_PYRAMINX = Pyraminx([1,1,1,1,1,1,1,1,1], [2,2,2,2,2,2,2,2,2], [3,3,3,3,3,3,3,3,3], [4,4,4,4,4,4,4,4,4])
   return SOLVED_PYRAMINX
+
+def checkIfValidConfig(pyraminx):
+  try:
+    newP = pyraminx.copy()
+    solver = PyraminxSolver(newP)
+    algo = solver.solve()
+  except:
+    return 0
+  else:
+    return checkSolution(pyraminx, algo)

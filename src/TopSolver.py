@@ -1,6 +1,6 @@
 # Class file to solve the final three edges
 
-import pUtils
+from src import pUtils
 
 class TopSolver:
   def __init__(self, edgeMap):

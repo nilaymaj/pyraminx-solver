@@ -1,7 +1,8 @@
 # Class file for the Pyraminx class
 # Stores the configuration state of the Pyraminx
 
-import pUtils, copy
+from src import pUtils
+import copy
 
 class Pyraminx:
   def __init__(self, red_face, green_face, blue_face, yellow_face):

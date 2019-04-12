@@ -1,8 +1,9 @@
 # This is for testing the solver. The solver's final exam, basically.
 
-import cli, copy, pUtils
-from PyraminxSolver import PyraminxSolver
-import OptimalSolver
+from src import cli, pUtils
+from src.PyraminxSolver import PyraminxSolver
+# from src import OptimalSolver
+import copy
 
 def main():
   print("Welcome to the PyraminxSolver Testing Ground\n")
@@ -13,9 +14,9 @@ def main():
     pyraminx = pUtils.scramble(scramble)
 
     origPyraminx = copy.deepcopy(pyraminx)
-    # solver = PyraminxSolver(pyraminx)
-    # algo = solver.solve()
-    algo = OptimalSolver.solve(pyraminx)
+    solver = PyraminxSolver(pyraminx)
+    algo = solver.solve()
+    # algo = OptimalSolver.solve(pyraminx)
 
     isSolved = pUtils.checkSolution(origPyraminx, algo)
     if isSolved:

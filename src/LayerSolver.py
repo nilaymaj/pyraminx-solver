@@ -1,8 +1,8 @@
 # Class file to solve one layer of edges
 # To be used after centres are solved
 
-from EdgeMap import EdgeMap
-import pUtils
+from src.EdgeMap import EdgeMap
+from src import pUtils
 
 class LayerSolver:
   def __init__(self, pyraminx):
