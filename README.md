@@ -1,13 +1,10 @@
 # Pyraminx Solver
 Algorithmic and optimal solvers for Pyraminx, in Python.
-
-Yet to upload documentation for using the program.
-
-Will expand this readme soon.
+Haven't added information on how to use this yet, sorry about that.
 
 ## Details
 Can enter pyraminx configuration face-wise, or just the scramble.
-Two solving methods - one is the algorithmic solver (solves tips, then centres, then bottom layer, then upper layer). Other is the optimal solver - an implementation of BFS.
+Two solving methods - one is the algorithmic solver (solves tips, then centres, then bottom layer, then upper layer). Other is the optimal solver - an absolutely terrible implementation of BFS.
 
 ## Specifications
 Algorithmic solver returns the solution algorithm almost instantaneously.
