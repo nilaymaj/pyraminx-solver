@@ -55,7 +55,7 @@ def getScrambleInput():
 def getInputMode():
   print('''
   There are two ways you can provide the state of your scrambled pyraminx.
-  You can find detailed instructions for input in 'howto.pdf'.
+  You can find detailed instructions for input in the README.
 
     1: Enter the face-wise, piece-wise color configuration
     2: Enter the scramble algorithm
@@ -66,8 +66,7 @@ def getInputMode():
     if option in (1, 2):
       return option
     else:
-      print("God, what has happened to people nowadays...")
-      print("Okay, let's try this again. Pay attention.")
+      print("Invalid option - select 1 or 2")
 
 
 def main():
@@ -109,7 +108,6 @@ def main():
     cli.printAlgo(algo)
   else:
     print("That configuration is already a solved one.")
-  # print("Satisfied? Yeah, you're welcome.")
   input()
   return
 

@@ -9,10 +9,10 @@ def main():
   print("Welcome to the PyraminxSolver Project\n")
 
   # Load pyraminx configuration from file
-  pyraminx = cli.getFromFile("pyrConfig.txt")
+  # pyraminx = cli.getFromFile("pyrConfig.txt")
 
   # Take config input from console
-  # pyraminx = cli.inputState()
+  pyraminx = cli.inputState()
 
   # Scramble pyraminx from file
   # pyraminx = cli.scramblePyraminx("scramble.txt")
@@ -28,27 +28,26 @@ def main():
   origPyraminx = copy.deepcopy(pyraminx)
 
   # Optimal Solver
-  isValid = pUtils.checkIfValidConfig(pyraminx)
-  if isValid:
-    algo = OptimalSolver.solve(pyraminx)
-  else:
-    algo = []
+  # isValid = pUtils.checkIfValidConfig(pyraminx)
+  # if isValid:
+  #   algo = OptimalSolver.solve(pyraminx)
+  # else:
+  #   algo = []
 
   # Intuitive Solver
-  # try:
-  #   solver = PyraminxSolver(pyraminx)
-  #   algo = solver.solve()
-  #   algo = pUtils.simplifyAlgo(algo)
-  # except:
-  #   algo = []
+  try:
+    solver = PyraminxSolver(pyraminx)
+    algo = solver.solve()
+    algo = pUtils.simplifyAlgo(algo)
+  except:
+    algo = []
 
   isSolved = pUtils.checkSolution(origPyraminx, algo)
   if isSolved:
     print("Solution algorithm:")
     cli.printAlgo(algo)
-    print("Yeah, it works.")
   else:
-    print("How DARE you give me an invalid configuration!")
+    print("The given configuration seems to be invalid.")
 
 if __name__ == "__main__":
   main()
